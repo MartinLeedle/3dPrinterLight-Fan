@@ -5,12 +5,19 @@ or decrease PWM depending on enclosure temperature. The LED strip is controlled 
 superloop that will wait refresh every 1 second.
 
 BOM
+
 Arduino Nano 	  x1
+
 Thermistor 100k   x1
+
 Resistor   100k   x1
+
 LED Strip 12V 1ft x1
+
 L298N		  x1
+
 Switch		  x1
+
 PC Fan 12V	  x1
 
 Installation
