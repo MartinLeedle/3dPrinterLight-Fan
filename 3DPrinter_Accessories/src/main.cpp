@@ -48,7 +48,9 @@ L298NX2 motors(EN_A, IN1_A, IN2_A, EN_B, IN1_B, IN2_B);
 void setup()
 {
   // put your setup code here, to run once:
-
+ TCCR0B = TCCR0B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
+ TCCR1B = TCCR1B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
+ TCCR2B = TCCR2B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
   // Used to display information
 
   thermistor = new AverageThermistor(
@@ -108,7 +110,7 @@ void loop()
   if (lightSwitchValue == 1)
   {
     motors.forwardB();
-    motors.setSpeedB(155);
+    motors.setSpeedB(127);
   }
   else if (lightSwitchValue == 0)
   {
