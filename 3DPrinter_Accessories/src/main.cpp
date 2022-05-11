@@ -48,9 +48,9 @@ L298NX2 motors(EN_A, IN1_A, IN2_A, EN_B, IN1_B, IN2_B);
 void setup()
 {
   // put your setup code here, to run once:
- TCCR0B = TCCR0B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
- TCCR1B = TCCR1B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
- TCCR2B = TCCR2B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
+ //TCCR0B = TCCR0B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
+ //TCCR1B = TCCR1B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
+ //TCCR2B = TCCR2B & (B11111000 | B00000010); // for PWM frequency of 3921.16 Hz
   // Used to display information
 
   thermistor = new AverageThermistor(
@@ -79,13 +79,13 @@ void loop()
 
   if (celsius > IDEAL_TEMP)
   {
-    if (aSpeed >= 255)
+    if (aSpeed >= 125)
       ;
     else
     {
       aSpeed += 20;
-      if (aSpeed >= 255)
-        aSpeed = 255;
+      if (aSpeed >= 125)
+        aSpeed = 125;
       motors.setSpeedA(aSpeed);
     }
   }
